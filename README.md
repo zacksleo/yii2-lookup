@@ -1,8 +1,10 @@
-Lookup
+# Lookup Module For Yii2
+
 =================
 
 
-Step # 1:  Migrate database
+## Migrate database
+
 =========
 
 To add a lookup table to your database, following is the sql for lookup:
@@ -34,8 +36,9 @@ yii migrate/up --migrationPath=@zacksleo/yii2/lookup/migrations
 ```
 
 
-Step # 2:
-=========
+## Config the components 
+
+
 
 To access the lookup functionality anywhere in you application (either frontend or backend) follow the following steps:
 ```
@@ -48,8 +51,8 @@ In your main.php under config folder add the following:
         ---
     ]
 ```
-Step # 3:
-=========
+## Customize the form
+
 
 Following are the few usage of lookup functionality:
 
@@ -85,3 +88,5 @@ Following are the few usage of lookup functionality:
     ) ?>
 	    
 ```
+
+Inspired By  [Ibrar Turi](http://blog.ituri.net/2015/10/yii2-lookup-module/)  @ibrarturi, Thanks for his work.
