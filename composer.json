@@ -1,0 +1,26 @@
+{
+  "name": "zacksleo/yii2-lookup",
+  "description": "Yii2 lookup module",
+  "type": "yii2-extension",
+  "keywords": [
+    "yii2",
+    "lookup",
+    "module"
+  ],
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "zacksleo",
+      "email": "zacksleo@gmail.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": ">=2.0.6",
+    "yiisoft/yii2-bootstrap": "~2.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "zacksleo\\yii2\\lookup\\": ""
+    }
+  }
+}
