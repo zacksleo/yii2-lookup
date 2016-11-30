@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `lookup` (
   `active` tinyint(1) DEFAULT '1',
   `sort_order` int(11) DEFAULT '1',
   `created_at` int(11) DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,	  
+  `updated_at` int(11) DEFAULT NULL,	  
   PRIMARY KEY (`id`),
   UNIQUE KEY `CK_Type_Name_Unique` (`type`,`name`)	  
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
