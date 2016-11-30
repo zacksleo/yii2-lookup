@@ -1,11 +1,8 @@
 # Lookup Module For Yii2
 
-=================
-
 
 ## Migrate database
 
-=========
 
 To add a lookup table to your database, following is the sql for lookup:
 
