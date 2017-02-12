@@ -16,7 +16,7 @@ use zacksleo\yii2\lookup\Module;
  * @property integer $code
  * @property string $comment
  * @property integer $active
- * @property integer $sort_order
+ * @property integer $order
  * @property integer $created_at
  * @property integer $updated_at
  */
@@ -45,8 +45,8 @@ class Lookup extends ActiveRecord
     public function rules()
     {
         return [
-            [['type', 'name', 'code', 'active', 'sort_order'], 'required'],
-            [['code', 'active', 'sort_order', 'created_at', 'updated_at'], 'integer'],
+            [['type', 'name', 'code', 'active', 'order'], 'required'],
+            [['code', 'active', 'order', 'created_at', 'updated_at'], 'integer'],
             [['comment'], 'string'],
             [['type', 'name'], 'string', 'max' => 100],
             [['type', 'name'], 'unique', 'targetAttribute' => ['type', 'name'], 'message' => Module::t('core', 'The combination of Type and Name has already been taken.')]
@@ -65,7 +65,7 @@ class Lookup extends ActiveRecord
             'code' => Module::t('core', 'Code'),
             'comment' => Module::t('core', 'Comment'),
             'active' => Module::t('core', 'Active'),
-            'sort_order' => Module::t('core', 'Sort Order'),
+            'order' => Module::t('core', 'Order'),
             'created_at' => Module::t('core', 'Created At'),
             'updated_at' => Module::t('core', 'Updated At'),
         ];
@@ -74,7 +74,7 @@ class Lookup extends ActiveRecord
     /**
      * Returns the items for the specified type.
      * @param string item type (e.g. 'PostStatus').
-     * @return array item names indexed by item code. The items are order by their sort_order values.
+     * @return array item names indexed by item code. The items are order by their order values.
      * An empty array is returned if the item type does not exist.
      */
     public static function items($type)
@@ -109,7 +109,7 @@ class Lookup extends ActiveRecord
                 'type' => $type,
                 'active' => 1,
             ])
-            ->orderBy('sort_order')
+            ->orderBy('order')
             ->all();
 
         foreach ($models as $model)

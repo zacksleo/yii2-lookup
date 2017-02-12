@@ -6,7 +6,7 @@ return [
     'Code' => '代码',
     'Comment' => '备注',
     'Active' => '有效',
-    'Sort Order' => '序号',
+    'Order' => '序号',
     'Created At' => '创建时间',
     'Updated At' => '更新时间',
     'Lookups' => '对照',

@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
                 'filter' => ['1' => Module::t('core', 'Yes'), '2' => Module::t('core', 'No')],
             ],
-            'sort_order',
+            'order',
             // 'created_at',
             // 'created_by',
             // 'updated_by',

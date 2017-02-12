@@ -30,7 +30,7 @@ use zacksleo\yii2\lookup\Module;
                     ['prompt' => '--- ' . Module::t('core', 'Select') . ' ---']
                 ) ?>
 
-                <?= $form->field($model, 'sort_order')->textInput() ?>
+                <?= $form->field($model, 'order')->textInput() ?>
 
                 <?php /*
             <?= $form->field($model, 'created_at')->textInput() ?>
@@ -58,7 +58,7 @@ $script = <<< JS
     // incident location
     $("#lookup-code").bind("blur", function() {
         var code = $(this).val() || 0;
-        $('#lookup-sort_order').val(code);
+        $('#lookup-order').val(code);
 
     });
 

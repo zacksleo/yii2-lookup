@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `lookup` (
   `code` int(11) DEFAULT '1',
   `comment` text,
   `active` tinyint(1) DEFAULT '1',
-  `sort_order` int(11) DEFAULT '1',
+  `order` int(11) DEFAULT '1',
   `created_at` int(11) DEFAULT NULL,
   `updated_at` int(11) DEFAULT NULL,	  
   PRIMARY KEY (`id`),

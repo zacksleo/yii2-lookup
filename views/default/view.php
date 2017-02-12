@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'active',
                 'value' => ($model->active == '1') ? Module::t('core', 'Yes') : Module::t('core', 'No'),
             ],
-            'sort_order',
+            'order',
             'created_at:datetime',
             'updated_at:datetime'
         ],

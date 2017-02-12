@@ -6,7 +6,7 @@ return [
     'Code' => '代碼',
     'Comment' => '備註',
     'Active' => '有效',
-    'Sort Order' => '序號',
+    'Order' => '序號',
     'Created At' => '創建時間',
     'Updated At' => '更新時間',
     'Lookups' => '對照',

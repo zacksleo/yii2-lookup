@@ -19,7 +19,7 @@ class m161128_081820_create_lookup_table extends Migration
             'code' => $this->integer()->defaultValue(1)->notNull(),
             'comment' => $this->text(),
             'active' => $this->boolean()->defaultValue(1),
-            'sort_order' => $this->integer()->defaultValue(1)->notNull(),
+            'order' => $this->integer()->defaultValue(1)->notNull(),
             'created_at' => $this->integer()->defaultValue(null)->notNull(),
             'updated_at' => $this->integer()->defaultValue(null)
         ]);

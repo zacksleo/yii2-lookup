@@ -18,7 +18,7 @@ class LookupSearch extends Lookup
     public function rules()
     {
         return [
-            [['id', 'code', 'active', 'sort_order', 'created_at', 'updated_at'], 'integer'],
+            [['id', 'code', 'active', 'order', 'created_at', 'updated_at'], 'integer'],
             [['type', 'name', 'comment'], 'safe'],
         ];
     }
@@ -59,7 +59,7 @@ class LookupSearch extends Lookup
             'id' => $this->id,
             'code' => $this->code,
             'active' => $this->active,
-            'sort_order' => $this->sort_order,
+            'order' => $this->order,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ]);
