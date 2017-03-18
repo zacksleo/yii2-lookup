@@ -12,7 +12,6 @@ class Module extends \yii\base\Module
     public $controllerNamespace = 'zacksleo\yii2\lookup\controllers';
 
     /**
-     *
      * @var string source language for translation
      */
     public $sourceLanguage = 'en-US';
@@ -27,7 +26,7 @@ class Module extends \yii\base\Module
     }
 
     /**
-     * Registers the translation files
+     * Registers the translation files.
      */
     protected function registerTranslations()
     {
@@ -42,7 +41,7 @@ class Module extends \yii\base\Module
     }
 
     /**
-     * Translates a message. This is just a wrapper of Yii::t
+     * Translates a message. This is just a wrapper of Yii::t.
      *
      * @see Yii::t
      *
