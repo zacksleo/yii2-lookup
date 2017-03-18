@@ -9,3 +9,4 @@ out
 gen
 package.json
 node_modules
+vendor/
