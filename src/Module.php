@@ -7,7 +7,7 @@ use yii;
 class Module extends \yii\base\Module
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public $controllerNamespace = 'zacksleo\yii2\lookup\controllers';
 
@@ -18,7 +18,7 @@ class Module extends \yii\base\Module
     public $sourceLanguage = 'en-US';
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function init()
     {

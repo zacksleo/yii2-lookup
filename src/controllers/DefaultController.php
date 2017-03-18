@@ -22,7 +22,7 @@ class DefaultController extends Controller
             ],
         ];
     }
-    
+
     /**
      * Lists all Lookup models.
      * @return mixed
