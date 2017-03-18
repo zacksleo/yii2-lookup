@@ -79,8 +79,9 @@ class Lookup extends ActiveRecord
      */
     public static function items($type)
     {
-        if (!isset(self::$_items[$type]))
+        if (!isset(self::$_items[$type])) {
             self::loadItems($type);
+        }
         return self::$_items[$type];
     }
 
@@ -92,8 +93,9 @@ class Lookup extends ActiveRecord
      */
     public static function item($type, $code)
     {
-        if (!isset(self::$_items[$type]))
+        if (!isset(self::$_items[$type])) {
             self::loadItems($type);
+        }
         return isset(self::$_items[$type][$code]) ? self::$_items[$type][$code] : false;
     }
 
@@ -112,8 +114,9 @@ class Lookup extends ActiveRecord
             ->orderBy('order')
             ->all();
 
-        foreach ($models as $model)
+        foreach ($models as $model) {
             self::$_items[$type][$model->code] = $model->name;
+        }
     }
 
 }

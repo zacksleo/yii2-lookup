@@ -23,7 +23,9 @@ use zacksleo\yii2\lookup\Module;
 
                 <?= $form->field($model, 'comment')->textarea(['rows' => 6]) ?>
 
-                <?php if ($model->isNewRecord) $model->active = '1'; ?>
+                <?php if ($model->isNewRecord) {
+                    $model->active = '1';
+                } ?>
 
                 <?= $form->field($model, 'active')->dropDownList(
                     ['1' => Module::t('core', 'Yes'), '2' => Module::t('core', 'No')],

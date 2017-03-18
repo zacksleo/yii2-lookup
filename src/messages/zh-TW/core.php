@@ -19,5 +19,4 @@ return [
     'Create Lookup' => '創建對照',
     'The combination of Type and Name has already been taken.' => '類型和名稱的組合已存在。',
     'Are you sure you want to delete this item?' => '确定要删除该项吗？',
-
 ];
