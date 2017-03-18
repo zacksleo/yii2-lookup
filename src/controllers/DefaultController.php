@@ -11,7 +11,7 @@ use yii\filters\VerbFilter;
 
 class DefaultController extends Controller
 {
-	public function behaviors()
+    public function behaviors()
     {
         return [
             'verbs' => [
@@ -29,7 +29,6 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-
         $lookupModel = new LookupSearch();
         $dataProvider = $lookupModel->search(Yii::$app->request->queryParams);
 
