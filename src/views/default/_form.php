@@ -7,6 +7,9 @@ use zacksleo\yii2\lookup\Module;
 /* @var $this yii\web\View */
 /* @var $model app\models\Lookup */
 /* @var $form yii\widgets\ActiveForm */
+if ($model->isNewRecord) {
+    $model->active = '1';
+}
 ?>
 
     <div class="row">
@@ -22,10 +25,6 @@ use zacksleo\yii2\lookup\Module;
                 <?= $form->field($model, 'code')->textInput() ?>
 
                 <?= $form->field($model, 'comment')->textarea(['rows' => 6]) ?>
-
-                <?php if ($model->isNewRecord) {
-                    $model->active = '1';
-                } ?>
 
                 <?= $form->field($model, 'active')->dropDownList(
                     ['1' => Module::t('core', 'Yes'), '2' => Module::t('core', 'No')],

@@ -118,5 +118,4 @@ class Lookup extends ActiveRecord
             self::$_items[$type][$model->code] = $model->name;
         }
     }
-
 }
