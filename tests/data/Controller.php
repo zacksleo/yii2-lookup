@@ -4,7 +4,7 @@ namespace zacksleo\yii2\lookup\tests\data;
 /**
  * Class Controller
  *
- * @package yii2mod\cms\tests\data
+ * @package zacksleo\yii2\lookup\tests\data
  */
 class Controller extends \yii\web\Controller
 {

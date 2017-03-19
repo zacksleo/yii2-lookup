@@ -13,9 +13,9 @@ use zacksleo\yii2\lookup\tests\TestCase;
 /**
  * Class CommentTest
  *
- * @package yii2mod\comments\tests
+ * @package zacksleo\yii2\lookup\tests
  */
-class CommentTest extends TestCase
+class LookupTest extends TestCase
 {
     public function testAddComment()
     {

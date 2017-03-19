@@ -109,7 +109,5 @@ class TestCase extends \PHPUnit_Framework_TestCase
             'created_at' => time(),
             'updated_at' => time(),
         ])->execute();
-
-
     }
 }
