@@ -1,6 +1,7 @@
 <?php
 
 namespace zacksleo\yii2\lookup\tests\data;
+
 /**
  * Class Controller
  *
