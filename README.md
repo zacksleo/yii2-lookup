@@ -1,9 +1,9 @@
 # Lookup Module For Yii2
 
 
-[![Latest Stable Version](https://poser.pugx.org/phpunit/phpunit/version)](https://packagist.org/packages/phpunit/phpunit)
-[![Total Downloads](https://poser.pugx.org/phpunit/phpunit/downloads)](https://packagist.org/packages/phpunit/phpunit)
-[![License](https://poser.pugx.org/phpunit/phpunit/license)](https://packagist.org/packages/phpunit/phpunit)
+[![Latest Stable Version](https://poser.pugx.org/zacksleo/yii2-lookup/version)](https://packagist.org/packages/zacksleo/yii2-lookup)
+[![Total Downloads](https://poser.pugx.org/zacksleo/yii2-lookup/downloads)](https://packagist.org/packages/zacksleo/yii2-lookup)
+[![License](https://poser.pugx.org/zacksleo/yii2-lookup/license)](https://packagist.org/packages/zacksleo/yii2-lookup)
 
 ## Migrate database
 
