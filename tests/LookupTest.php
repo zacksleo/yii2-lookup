@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2mod\comments\tests;
+namespace zacksleo\yii2\lookup\tests;
 
 use Yii;
 use yii\helpers\Json;
