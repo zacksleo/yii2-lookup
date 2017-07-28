@@ -52,7 +52,7 @@ before_script:
 
 script:
   #- phpunit --verbose $PHPUNIT_FLAGS
-  - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
+  -  vendor/bin/phpunit tests --bootstrap ./tests/bootstrap.php  LookupTest
 
 after_script:
   - wget https://scrutinizer-ci.com/ocular.phar
