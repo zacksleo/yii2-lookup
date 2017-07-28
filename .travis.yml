@@ -42,7 +42,7 @@ before_script:
     fi
   - travis_retry composer self-update
   - travis_retry composer install --no-interaction --prefer-source --dev
-  - travis_retry vendor/bin/yii migrate
+ # - travis_retry vendor/bin/yii migrate
 
 
 script:
