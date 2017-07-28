@@ -2,7 +2,10 @@ language: php
 
 php:
   - 5.6
-  - 7.1
+  #- 7.1
+
+services:
+  - mysql
 
 # faster builds on new travis setup not using sudo
 sudo: false
@@ -20,13 +23,31 @@ install:
   - travis_retry composer install --prefer-dist --no-interaction
 
 before_script:
+ # show some versions and env information
+  - php --version
+  - composer --version
+  - |
+    if [ $TASK_TESTS_PHP == 1 ]; then
+      php -r "echo INTL_ICU_VERSION . \"\n\";"
+      php -r "echo INTL_ICU_DATA_VERSION . \"\n\";"
+      psql --version
+      mysql --version
+    # initialize databases
+  - |
+    if [ $TASK_TESTS_PHP == 1 ]; then
+      travis_retry mysql -e 'CREATE DATABASE `yiitest`;';
+      mysql -e "CREATE USER 'travis'@'localhost' IDENTIFIED WITH mysql_native_password;";
+      mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'travis'@'localhost' WITH GRANT OPTION;";
+    fi
   - travis_retry composer self-update
   - travis_retry composer install --no-interaction --prefer-source --dev
+  - travis_retry vendor/bin/yii migrate
 
 
 script:
   - phpunit --verbose $PHPUNIT_FLAGS
-  - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
+  #- vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
+  - phpunit -c tests
 
 after_script:
   - wget https://scrutinizer-ci.com/ocular.phar
