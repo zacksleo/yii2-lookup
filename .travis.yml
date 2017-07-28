@@ -42,13 +42,22 @@ before_script:
     fi
   - travis_retry composer self-update
   - travis_retry composer install --no-interaction --prefer-source --dev
- # - travis_retry vendor/bin/yii migrate
+  # - travis_retry vendor/bin/yii migrate
+  # enable code coverage
+   - |
+     if [ $TASK_TESTS_COVERAGE == 1 ]; then
+       PHPUNIT_FLAGS="--coverage-clover=coverage.clover"
+     fi
 
 
 script:
   #- phpunit --verbose $PHPUNIT_FLAGS
   - phpunit --coverage-text --coverage-clover=coverage.clover
-  #- phpunit -c tests
+  # PHP tests
+  - |
+    if [ $TASK_TESTS_PHP == 1 ]; then
+        vendor/bin/phpunit --verbose $PHPUNIT_FLAGS --exclude-group mssql,oci,wincache,xcache,zenddata,cubrid
+    fi
 
 after_script:
   - wget https://scrutinizer-ci.com/ocular.phar
