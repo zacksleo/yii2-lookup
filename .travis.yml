@@ -46,8 +46,8 @@ before_script:
 
 
 script:
-  - phpunit --verbose $PHPUNIT_FLAGS
-  #- vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
+  #- phpunit --verbose $PHPUNIT_FLAGS
+  - phpunit --coverage-text --coverage-clover=coverage.clover
   #- phpunit -c tests
 
 after_script:
