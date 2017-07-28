@@ -32,7 +32,7 @@ before_script:
       php -r "echo INTL_ICU_DATA_VERSION . \"\n\";"
       psql --version
       mysql --version
-    # initialize databases
+  # initialize databases
   - |
     if [ $TASK_TESTS_PHP == 1 ]; then
       travis_retry mysql -e 'CREATE DATABASE `yiitest`;';
@@ -47,7 +47,7 @@ before_script:
 script:
   - phpunit --verbose $PHPUNIT_FLAGS
   #- vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
-  - phpunit -c tests
+  #- phpunit -c tests
 
 after_script:
   - wget https://scrutinizer-ci.com/ocular.phar
