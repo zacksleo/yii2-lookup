@@ -18,13 +18,12 @@
     "yiisoft/yii2": "*"
   },
   "require-dev": {
-    "phpunit/phpunit": "~4.0",
-    "phpunit/dbunit": "~1.0",
-    "yiisoft/yii2-imagine": "~2.0.0"
+    "phpunit/phpunit": "~4.0"
   },
   "autoload": {
     "psr-4": {
-      "zacksleo\\yii2\\lookup\\": " "
+      "zacksleo\\yii2\\lookup\\": "src",
+      "zacksleo\\yii2\\lookup\\tests\\": "tests"
     }
   }
 }
