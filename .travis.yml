@@ -32,6 +32,7 @@ before_script:
       php -r "echo INTL_ICU_DATA_VERSION . \"\n\";"
       psql --version
       mysql --version
+    fi
   # initialize databases
   - |
     if [ $TASK_TESTS_PHP == 1 ]; then
