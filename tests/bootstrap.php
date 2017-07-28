@@ -13,6 +13,8 @@ Yii::setAlias('@tests', __DIR__);
 Yii::setAlias('@webroot', __DIR__);
 Yii::setAlias('@web', '/');
 
+
+require_once __DIR__ . '/TestCase.php';
 new \yii\console\Application([
     'id' => 'unit',
     'basePath' => __DIR__,
