@@ -20,7 +20,7 @@ before_script:
   - travis_retry composer install --no-interaction --prefer-source --dev
 
 script:
-  - vendor/bin/phpunit  --bootstrap tests/bootstrap.php --coverage-text --coverage-clover=coverage.clover
+  - ./vendor/bin/phpunit  --bootstrap ./tests/bootstrap.php  --coverage-text --coverage-clover=coverage.clover
 
 after_script:
   - wget https://scrutinizer-ci.com/ocular.phar
