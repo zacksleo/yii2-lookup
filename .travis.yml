@@ -49,7 +49,6 @@ before_script:
        PHPUNIT_FLAGS="--coverage-clover=coverage.clover"
      fi
 
-
 script:
   #- phpunit --verbose $PHPUNIT_FLAGS
   -  vendor/bin/phpunit tests --bootstrap ./tests/bootstrap.php  LookupTest
