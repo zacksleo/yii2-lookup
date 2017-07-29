@@ -29,7 +29,7 @@ class LookupTest extends TestCase
             ],
         ];
         $response = Yii::$app->runAction('lookup/default/create', ['entity' => $this->generateEntity()]);
-        $this->assertEquals('success', $response['status'], 'Unable to add a comment!');
+        $this->assertEquals('Found', $response->statusText, 'Unable to add a comment!');
     }
 
     /**
@@ -40,7 +40,6 @@ class LookupTest extends TestCase
     private function generateEntity()
     {
         $post = PostModel::find()->one();
-
         return utf8_encode(Yii::$app->getSecurity()->encryptByKey(Json::encode([
             'entity' => hash('crc32', get_class($post)),
             'entityId' => $post->id,

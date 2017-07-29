@@ -20,6 +20,7 @@ class TestCase extends \PHPUnit_Framework_TestCase
 
     protected function tearDown()
     {
+        $this->destroyTestDbData();
         $this->destroyApplication();
     }
 
@@ -39,9 +40,17 @@ class TestCase extends \PHPUnit_Framework_TestCase
             'components' => [
                 'db' => [
                     'class' => 'yii\db\Connection',
-                    'dsn' => 'sqlite::memory:',
+                   //'dsn' => 'sqlite::memory:',
+                    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
+                    'username' => 'root',
+                    'password' => '',
                 ],
             ],
+            'modules'=>[
+                'lookup'=>[
+                    'class'=>'zacksleo\yii2\lookup\Module'
+                ]
+            ]
         ], $config));
     }
 
@@ -86,8 +95,8 @@ class TestCase extends \PHPUnit_Framework_TestCase
             'comment' => 'text',
             'active' => 'smallint default 1',
             'order' => 'integer not null default 0',
-            'created_at' => 'integer not null default NULL',
-            'updated_at' => 'integer default NULL',
+            'created_at' => 'integer not null default 0',
+            'updated_at' => 'integer default 0',
         ])->execute();
 
         $db->createCommand()->insert('lookup', [
@@ -109,5 +118,27 @@ class TestCase extends \PHPUnit_Framework_TestCase
             'created_at' => time(),
             'updated_at' => time(),
         ])->execute();
+
+        $db->createCommand()->createTable('post', [
+            'id' => 'pk',
+            'title' => 'string not null',
+            'description' => 'string not null',
+            'created_at' => 'integer not null default 0',
+            'updated_at' => 'integer default 0',
+        ])->execute();
+
+        $db->createCommand()->insert('post', [
+            'title' => 'title',
+            'description' => 'description',
+            'created_at' => time(),
+            'updated_at' => time(),
+        ])->execute();
+    }
+
+    protected function destroyTestDbData()
+    {
+        $db = Yii::$app->getDb();
+        $res = $db->createCommand()->dropTable("lookup")->execute();
+        $db->createCommand()->dropTable('post')->execute();
     }
 }
