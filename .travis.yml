@@ -5,21 +5,18 @@ php:
   #- 7.1
 
 services:
-  - mysql
+  - sqlite
 
 # faster builds on new travis setup not using sudo
 sudo: false
 
-matrix:
-  fast_finish: true
-# cache vendor dirs
 cache:
   directories:
     - $HOME/.composer/cache
     - vendor
 
 install:
-  - travis_retry composer self-update && composer --version
+  - travis_retry composer self-update
   - travis_retry composer global require "fxp/composer-asset-plugin:^1.2.0"
   - travis_retry composer install --prefer-dist --no-interaction
 
@@ -30,6 +27,6 @@ before_script:
 script:
   - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
 
-after_script:
-  - wget https://scrutinizer-ci.com/ocular.phar
-  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+#after_script:
+#  - wget https://scrutinizer-ci.com/ocular.phar
+#  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
