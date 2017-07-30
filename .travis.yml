@@ -2,6 +2,9 @@ language: php
 
 dist: precise
 
+matrix:
+  fast_finish: true
+
 php:
   - 5.6
 
@@ -20,8 +23,5 @@ before_script:
   - travis_retry composer install --no-interaction --prefer-source --dev
 
 script:
-  - phpunit -v
-
-after_script:
-  - wget https://scrutinizer-ci.com/ocular.phar
-  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+  - mkdir -p build/logs
+  - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
