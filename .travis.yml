@@ -7,7 +7,7 @@ matrix:
 
 php:
   - 5.6
-
+  - 7.1
 
 install:
   - travis_retry composer self-update
@@ -20,3 +20,7 @@ before_script:
 
 script:
   - phpunit --debug
+
+after_script:
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
