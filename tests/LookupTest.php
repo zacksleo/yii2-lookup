@@ -19,8 +19,6 @@ class LookupTest extends TestCase
 {
     public function testAddComment()
     {
-        $this->assertEquals('Found', 'Found', 'Unable to add a comment!');
-        return;
         Yii::$app->request->bodyParams = [
             'Lookup' => [
                 'type' => 'TestStatus',
