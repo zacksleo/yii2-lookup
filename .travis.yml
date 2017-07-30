@@ -21,7 +21,12 @@ install:
 before_script:
   - travis_retry composer self-update
   - travis_retry composer install --no-interaction --prefer-source --dev
+  - travis_retray apt-get install php-pear
+  - travis_retray  pear channel-update pear.php.net
+  - travis_retray  pear upgrade-all
+  - travis_retray  pear channel-discover pear.phpunit.de
+  - travis_retray  pear install -a phpunit/PHPUnit
 
 script:
   - mkdir -p build/logs
-  - vendor/bin/phpunit -c tests --coverage-clover build/logs/clover.xml
+  - phpunit -v
