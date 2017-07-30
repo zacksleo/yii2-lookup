@@ -23,4 +23,4 @@ script:
 
 after_script:
   - wget https://scrutinizer-ci.com/ocular.phar
-  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+  - php ocular.phar code-coverage:upload --access-token="66f52a8423a65504a32da603eb3f498034866b9d10071cccc9e2c58424413edf" --format=php-clover coverage.clover
