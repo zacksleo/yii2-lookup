@@ -3,7 +3,12 @@ build:
         override:
                  - ./run-tests.sh
 
-filter:
-    excluded_paths:
-        - src/*
-        - tests/*
+
+checks:
+    php:
+        code_rating: true
+        duplication: true
+    filter:
+        excluded_paths:
+            - src/*
+            - tests/*
