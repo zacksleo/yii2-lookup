@@ -1,15 +1,6 @@
-build:
-    tests:
-        override:
-                 - ./run-tests.sh
-
+import: php
 
 checks:
     php:
         code_rating: true
         duplication: true
-
-filter:
-        excluded_paths:
-            - src/*
-            - tests/*
