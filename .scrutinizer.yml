@@ -1,9 +1,3 @@
-build:
-    tests:
-        override:
-                 - ./run-tests.sh
-
-
 checks:
     php:
         code_rating: true
