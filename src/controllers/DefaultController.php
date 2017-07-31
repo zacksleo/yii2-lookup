@@ -25,7 +25,7 @@ class DefaultController extends Controller
 
     /**
      * Lists all Lookup models.
-     * @return mixed
+     * @return string
      */
     public function actionIndex()
     {
@@ -41,7 +41,7 @@ class DefaultController extends Controller
     /**
      * Displays a single Lookup model.
      * @param integer $id
-     * @return mixed
+     * @return string
      */
     public function actionView($id)
     {
