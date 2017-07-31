@@ -17,12 +17,8 @@
             <directory suffix=".php">./vendor</directory>
         </blacklist>
         <whitelist>
-            <directory suffix=".php">./*</directory>
-            <file>./*</file>
-            <exclude>
-                <directory suffix=".php">./*</directory>
-                <file>./*</file>
-            </exclude>
+            <directory suffix=".php">./src</directory>
+            <directory suffix=".php">./tests</directory>
         </whitelist>
     </filter>
 </phpunit>
