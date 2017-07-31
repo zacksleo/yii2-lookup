@@ -4,6 +4,7 @@
 [![Latest Stable Version](https://poser.pugx.org/zacksleo/yii2-lookup/version)](https://packagist.org/packages/zacksleo/yii2-lookup)
 [![Total Downloads](https://poser.pugx.org/zacksleo/yii2-lookup/downloads)](https://packagist.org/packages/zacksleo/yii2-lookup)
 [![License](https://poser.pugx.org/zacksleo/yii2-lookup/license)](https://packagist.org/packages/zacksleo/yii2-lookup)
+[![Build Status](https://travis-ci.org/monster-hunter/yii2-lookup.svg?branch=master)](https://travis-ci.org/monster-hunter/yii2-lookup)
 
 ## Migrate database
 
