@@ -17,11 +17,11 @@
             <directory suffix=".php">./vendor</directory>
         </blacklist>
         <whitelist>
-            <directory suffix=".php">/tests</directory>
-            <file>/tests</file>
+            <directory suffix=".php">./*</directory>
+            <file>./*</file>
             <exclude>
-                <directory suffix=".php">/tests</directory>
-                <file>/tests</file>
+                <directory suffix=".php">./*</directory>
+                <file>./*</file>
             </exclude>
         </whitelist>
     </filter>
