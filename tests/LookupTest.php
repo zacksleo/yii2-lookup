@@ -32,6 +32,12 @@ class LookupTest extends TestCase
         $this->assertEquals('Found', $response->statusText, 'Unable to add a comment!');
     }
 
+    public function testView(){
+        Yii::$app->layout = false;
+        $response = Yii::$app->runAction('lookup/default/view', ['id'=>1]);
+        $this->assertEquals('Found', $response->statusText, 'Unable to add a comment!');
+    }
+
     /**
      * Generate entity string
      *
