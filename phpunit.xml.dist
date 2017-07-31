@@ -15,6 +15,7 @@
     <filter>
         <blacklist>
             <directory suffix=".php">./vendor</directory>
+            <directory suffix=".php">./src/migrations</directory>
         </blacklist>
         <whitelist>
             <directory suffix=".php">./src</directory>
