@@ -1,4 +1,8 @@
-import: php
+build:
+    tests:
+        override:
+                 - ./run-tests.sh
+
 
 checks:
     php:
