@@ -3,9 +3,8 @@
 namespace zacksleo\yii2\lookup\tests;
 
 use Yii;
-use yii\console\Request;
+
 use yii\helpers\Json;
-use yii\httpclient\Client;
 use zacksleo\yii2\lookup\tests\data\PostModel;
 
 
@@ -33,6 +32,15 @@ class LookupTest extends TestCase
 
     public function testUpdateComment()
     {
+        Yii::$app->request->bodyParams = [
+            'Lookup' => [
+                'type' => 'TestStatus',
+                'name' => '测试中',
+                'code' => 3,
+                'order' => 3,
+                'active' => 1,
+            ],
+        ];
         $response = Yii::$app->runAction('lookup/default/update', ['id'=>1,'entity' => $this->generateEntity()]);
         $this->assertEquals('Found', $response->statusText, 'Unable to add a comment!');
     }
