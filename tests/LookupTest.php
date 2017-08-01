@@ -4,11 +4,8 @@ namespace zacksleo\yii2\lookup\tests;
 
 use Yii;
 use yii\helpers\Json;
-use zacksleo\yii2\lookup\models\Lookup;
-use zacksleo\yii2\lookup\Module;
-use zacksleo\yii2\lookup\controllers\DefaultController;
 use zacksleo\yii2\lookup\tests\data\PostModel;
-use zacksleo\yii2\lookup\tests\TestCase;
+
 
 /**
  * Class CommentTest
@@ -29,12 +26,6 @@ class LookupTest extends TestCase
             ],
         ];
         $response = Yii::$app->runAction('lookup/default/create', ['entity' => $this->generateEntity()]);
-        $this->assertEquals('Found', $response->statusText, 'Unable to add a comment!');
-    }
-
-    public function testView(){
-        Yii::$app->layout = false;
-        $response = Yii::$app->runAction('lookup/default/view', ['id'=>1]);
         $this->assertEquals('Found', $response->statusText, 'Unable to add a comment!');
     }
 
