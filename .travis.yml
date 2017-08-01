@@ -8,10 +8,17 @@ php:
   - 7.0
   - 7.1
 
+  # cache vendor dirs
+cache:
+  directories:
+    - $HOME/.composer/cache
+    - vendo
+
 install:
   - travis_retry composer self-update
   - travis_retry composer global require "fxp/composer-asset-plugin:^1.2.0"
   - travis_retry composer install --prefer-dist --no-interaction
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 before_script:
   - travis_retry composer self-update
