@@ -35,17 +35,25 @@ class TestCase extends \PHPUnit_Framework_TestCase
     {
         new $appClass(ArrayHelper::merge([
             'id' => 'testapp',
-            'basePath' => __DIR__,
+            'basePath' =>  __DIR__ ,
             'vendorPath' => $this->getVendorPath(),
             'components' => [
                 'db' => [
                     'class' => 'yii\db\Connection',
                     'dsn' => 'sqlite::memory:'
                 ],
+                'i18n' => [
+                    'translations' => [
+                        '*' => [
+                            'class' => 'yii\i18n\PhpMessageSource',
+                        ]
+                    ]
+                ]
             ],
             'modules'=>[
                 'lookup'=>[
-                    'class'=>'zacksleo\yii2\lookup\Module'
+                    'class'=>'zacksleo\yii2\lookup\Module',
+                    'layout'=>'@tests/layouts/main'
                 ]
             ]
         ], $config));
@@ -135,7 +143,7 @@ class TestCase extends \PHPUnit_Framework_TestCase
     protected function destroyTestDbData()
     {
         $db = Yii::$app->getDb();
-        $res = $db->createCommand()->dropTable("lookup")->execute();
+        $db->createCommand()->dropTable("lookup")->execute();
         $db->createCommand()->dropTable('post')->execute();
     }
 }
