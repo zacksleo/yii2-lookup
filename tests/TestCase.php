@@ -34,7 +34,7 @@ class TestCase extends \PHPUnit_Framework_TestCase
     {
         new $appClass(ArrayHelper::merge([
             'id' => 'testapp',
-            'basePath' =>  __DIR__ ,
+            'basePath' => __DIR__,
             'vendorPath' => $this->getVendorPath(),
             'components' => [
                 'db' => [
@@ -49,10 +49,10 @@ class TestCase extends \PHPUnit_Framework_TestCase
                     ]
                 ],
             ],
-            'modules'=>[
-                'lookup'=>[
-                    'class'=>'zacksleo\yii2\lookup\Module',
-                    'layout'=>'@tests/layouts/main'
+            'modules' => [
+                'lookup' => [
+                    'class' => 'zacksleo\yii2\lookup\Module',
+                    'layout' => '@tests/layouts/main'
                 ]
             ]
         ], $config));
@@ -77,9 +77,9 @@ class TestCase extends \PHPUnit_Framework_TestCase
                     ]
                 ],
             ],
-            'modules'=>[
-                'lookup'=>[
-                    'class'=>'zacksleo\yii2\lookup\Module'
+            'modules' => [
+                'lookup' => [
+                    'class' => 'zacksleo\yii2\lookup\Module'
                 ]
             ]
         ], $config));
@@ -104,7 +104,8 @@ class TestCase extends \PHPUnit_Framework_TestCase
         \Yii::$app = null;
     }
 
-    protected  function destroyTestDbData(){
+    protected function destroyTestDbData()
+    {
 
 
     }

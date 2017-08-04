@@ -14,7 +14,6 @@ use zacksleo\yii2\lookup\Module;
 
 class LookupSearchModelTest extends TestCase
 {
-
     public function testSearch()
     {
         $lookupSearch = new LookupSearch();
