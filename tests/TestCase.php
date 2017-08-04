@@ -4,7 +4,6 @@ namespace zacksleo\yii2\lookup\tests;
 
 use Yii;
 use yii\helpers\ArrayHelper;
-use zacksleo\yii2\lookup\tests\data\Controller;
 
 /**
  * This is the base class for all yii framework unit tests.
@@ -14,12 +13,13 @@ class TestCase extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->mockApplication();
-        $this->setupTestDbData();
+        $this->mockWebApplication();
+        $this->createTestDbData();
     }
 
     protected function tearDown()
     {
+        $this->destroyTestDbData();
         $this->destroyApplication();
     }
 
@@ -30,7 +30,7 @@ class TestCase extends \PHPUnit_Framework_TestCase
      * @param array $config The application configuration, if needed
      * @param string $appClass name of the application class to create
      */
-    protected function mockApplication($config = [], $appClass = '\yii\web\Application')
+    protected function mockApplication($config = [], $appClass = '\yii\console\Application')
     {
         new $appClass(ArrayHelper::merge([
             'id' => 'testapp',
@@ -39,9 +39,49 @@ class TestCase extends \PHPUnit_Framework_TestCase
             'components' => [
                 'db' => [
                     'class' => 'yii\db\Connection',
-                    'dsn' => 'sqlite::memory:',
+                    'dsn' => 'sqlite::memory:'
+                ],
+                'i18n' => [
+                    'translations' => [
+                        '*' => [
+                            'class' => 'yii\i18n\PhpMessageSource',
+                        ]
+                    ]
                 ],
             ],
+            'modules' => [
+                'lookup' => [
+                    'class' => 'zacksleo\yii2\lookup\Module',
+                    'layout' => '@tests/layouts/main'
+                ]
+            ]
+        ], $config));
+    }
+
+    protected function mockWebApplication($config = [], $appClass = '\yii\web\Application')
+    {
+        new $appClass(ArrayHelper::merge([
+            'id' => 'testapp',
+            'basePath' => __DIR__,
+            'vendorPath' => $this->getVendorPath(),
+            'components' => [
+                'db' => [
+                    'class' => 'yii\db\Connection',
+                    'dsn' => 'sqlite::memory:'
+                ],
+                'i18n' => [
+                    'translations' => [
+                        '*' => [
+                            'class' => 'yii\i18n\PhpMessageSource',
+                        ]
+                    ]
+                ],
+            ],
+            'modules' => [
+                'lookup' => [
+                    'class' => 'zacksleo\yii2\lookup\Module'
+                ]
+            ]
         ], $config));
     }
 
@@ -58,26 +98,20 @@ class TestCase extends \PHPUnit_Framework_TestCase
      */
     protected function destroyApplication()
     {
-        Yii::$app = null;
+        if (\Yii::$app && \Yii::$app->has('session', true)) {
+            \Yii::$app->session->close();
+        }
+        \Yii::$app = null;
     }
 
-    /**
-     * @param array $config controller config
-     *
-     * @return Controller controller instance
-     */
-    protected function createController($config = [])
+    protected function destroyTestDbData()
     {
-        return new Controller('test', Yii::$app, $config);
     }
 
-    /**
-     * Setup tables for test ActiveRecord
-     */
-    protected function setupTestDbData()
+    protected function createTestDbData()
     {
         $db = Yii::$app->getDb();
-        // Structure :
+
         $db->createCommand()->createTable('lookup', [
             'id' => 'pk',
             'type' => 'string not null',
@@ -86,10 +120,9 @@ class TestCase extends \PHPUnit_Framework_TestCase
             'comment' => 'text',
             'active' => 'smallint default 1',
             'order' => 'integer not null default 0',
-            'created_at' => 'integer not null default NULL',
-            'updated_at' => 'integer default NULL',
+            'created_at' => 'integer not null default 0',
+            'updated_at' => 'integer default 0',
         ])->execute();
-
         $db->createCommand()->insert('lookup', [
             'type' => 'TestStatus',
             'name' => '成功',
@@ -99,13 +132,25 @@ class TestCase extends \PHPUnit_Framework_TestCase
             'created_at' => time(),
             'updated_at' => time(),
         ])->execute();
-
         $db->createCommand()->insert('lookup', [
             'type' => 'TestStatus',
             'name' => '失败',
             'code' => 2,
             'active' => 1,
             'order' => 2,
+            'created_at' => time(),
+            'updated_at' => time(),
+        ])->execute();
+        $db->createCommand()->createTable('post', [
+            'id' => 'pk',
+            'title' => 'string not null',
+            'description' => 'string not null',
+            'created_at' => 'integer not null default 0',
+            'updated_at' => 'integer default 0',
+        ])->execute();
+        $db->createCommand()->insert('post', [
+            'title' => 'title',
+            'description' => 'description',
             'created_at' => time(),
             'updated_at' => time(),
         ])->execute();
