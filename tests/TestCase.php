@@ -4,7 +4,6 @@ namespace zacksleo\yii2\lookup\tests;
 
 use Yii;
 use yii\helpers\ArrayHelper;
-use zacksleo\yii2\lookup\tests\data\Controller;
 
 /**
  * This is the base class for all yii framework unit tests.
