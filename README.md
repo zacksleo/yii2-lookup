@@ -3,12 +3,11 @@
 
 [![Latest Stable Version](https://poser.pugx.org/zacksleo/yii2-lookup/version)](https://packagist.org/packages/zacksleo/yii2-lookup)
 [![Total Downloads](https://poser.pugx.org/zacksleo/yii2-lookup/downloads)](https://packagist.org/packages/zacksleo/yii2-lookup)
-[![License](https://poser.pugx.org/zacksleo/yii2-lookup/license)](https://packagist.org/packages/zacksleo/yii2-lookup)
-[![Build Status](https://travis-ci.org/monster-hunter/yii2-lookup.svg?branch=master)](https://travis-ci.org/monster-hunter/yii2-lookup)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/monster-hunter/yii2-lookup/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/monster-hunter/yii2-lookup/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/monster-hunter/yii2-lookup/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/monster-hunter/yii2-lookup/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/monster-hunter/yii2-lookup/badges/build.png?b=master)](https://scrutinizer-ci.com/g/monster-hunter/yii2-lookup/build-status/master)
-[![StyleCI](https://styleci.io/repos/98613980/shield?branch=master)](https://styleci.io/repos/98613980)
+[![Build Status](https://travis-ci.org/zacksleo/yii2-lookup.svg?branch=master)](https://travis-ci.org/monster-hunter/yii2-lookup)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/zacksleo/yii2-lookup/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/zacksleo/yii2-lookup/?branch=master)
+[![Code Climate](https://img.shields.io/codeclimate/github/zacksleo/yii2-lookup.svg)]()
+[![Code Coverage](https://scrutinizer-ci.com/g/zacksleo/yii2-lookup/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/zacksleo/yii2-lookup/?branch=master)
+[![StyleCI](https://styleci.io/repos/75172753/shield?branch=master)](https://styleci.io/repos/75172753)
 ## Migrate database
 
 
