@@ -79,8 +79,7 @@ class TestCase extends \PHPUnit_Framework_TestCase
             ],
             'modules'=>[
                 'lookup'=>[
-                    'class'=>'zacksleo\yii2\lookup\Module',
-                    'layout'=>'@tests/layouts/main'
+                    'class'=>'zacksleo\yii2\lookup\Module'
                 ]
             ]
         ], $config));
