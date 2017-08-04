@@ -29,7 +29,7 @@ class DefaultController extends Controller
      * @return string
      */
     public function actionIndex()
-    {var_dump( Yii::$app->request->url);exit;
+    {
         $lookupModel = new LookupSearch();
         $dataProvider = $lookupModel->search(Yii::$app->request->queryParams);
         return $this->render('index', [
