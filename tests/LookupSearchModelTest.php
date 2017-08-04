@@ -8,8 +8,6 @@
 
 namespace zacksleo\yii2\lookup\tests;
 
-use yii;
-use zacksleo\yii2\lookup\models\Lookup;
 use zacksleo\yii2\lookup\models\LookupSearch;
 
 class LookupSearchModelTest extends TestCase
