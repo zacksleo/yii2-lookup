@@ -19,6 +19,7 @@
         <blacklist>
             <directory suffix=".php">./vendor</directory>
             <directory suffix=".php">./messages</directory>
+            <directory suffix=".php">./controllers</directory>
         </blacklist>
     </filter>
 </phpunit>
