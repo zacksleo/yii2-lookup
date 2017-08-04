@@ -1,8 +1,3 @@
-env:
-  global:
-    - CC_TEST_REPORTER_ID=c77f8d9dcc9ad16765693397cd74252625c03470fb62f7d945d2ad527fd4e7b8
-    - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
-
 language: php
 
 matrix:
@@ -31,8 +26,8 @@ before_script:
 
 script:
   - phpunit --coverage-text --coverage-clover=coverage.clover
+  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
 
 after_script:
   - wget https://scrutinizer-ci.com/ocular.phar
   - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
