@@ -12,7 +12,7 @@ php:
 cache:
   directories:
     - $HOME/.composer/cache
-    - vendo
+    - vendor
 
 install:
   - travis_retry composer self-update
