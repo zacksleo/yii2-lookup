@@ -3,7 +3,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/zacksleo/yii2-lookup/version)](https://packagist.org/packages/zacksleo/yii2-lookup)
 [![Total Downloads](https://poser.pugx.org/zacksleo/yii2-lookup/downloads)](https://packagist.org/packages/zacksleo/yii2-lookup)
-[![Build Status](https://travis-ci.org/zacksleo/yii2-lookup.svg?branch=master)](https://travis-ci.org/monster-hunter/yii2-lookup)
+[![Build Status](https://travis-ci.org/zacksleo/yii2-lookup.svg?branch=master)](https://travis-ci.org/zacksleo/yii2-lookup)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/zacksleo/yii2-lookup/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/zacksleo/yii2-lookup/?branch=master)
 [![Code Climate](https://img.shields.io/codeclimate/github/zacksleo/yii2-lookup.svg)]()
 [![Code Coverage](https://scrutinizer-ci.com/g/zacksleo/yii2-lookup/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/zacksleo/yii2-lookup/?branch=master)
