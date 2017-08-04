@@ -50,4 +50,23 @@ class LookupModelTest extends TestCase
         $res = Lookup::item($model->type, $model->code);
         $this->assertTrue($res == $model->name,'add success');
     }
+
+    public function testDelete()
+    {
+        $model = Lookup::findOne(['id'=>1]);
+        if($model->id >0 ){
+            $model->delete();
+        }
+        $model = Lookup::findOne(['id'=>1]);
+        $this->assertTrue(empty($model), 'delete error');
+    }
+
+    public function testUpdate()
+    {
+        $model = Lookup::findOne(['id'=>1]);
+        $model->name = "i am updated";
+        $model->save();
+        $find = Lookup::findOne(['id'=>1]);
+        $this->assertTrue($find->name == $model->name, 'update error');
+    }
 }
