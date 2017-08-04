@@ -4,7 +4,8 @@ matrix:
   fast_finish: true
 
 php:
-  - 7.1
+  - 5.6
+  - 7.0
 
   # cache vendor dirs
 cache:
