@@ -20,4 +20,10 @@ class LookupSearchModelTest extends TestCase
         $res = $lookupSearch->search(['LookupSearch' => $data]);
         $this->assertTrue(1 == $res->query->count(), 'search error');
     }
+
+    public function testModule()
+    {
+        $module = \Yii::$app->getModule('lookup');
+        $module->init();
+    }
 }

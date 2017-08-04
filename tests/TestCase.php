@@ -30,7 +30,7 @@ class TestCase extends \PHPUnit_Framework_TestCase
      * @param array $config The application configuration, if needed
      * @param string $appClass name of the application class to create
      */
-    protected function mockApplication($config = [], $appClass = '\yii\web\Application')
+    protected function mockApplication($config = [], $appClass = '\yii\console\Application')
     {
         new $appClass(ArrayHelper::merge([
             'id' => 'testapp',
@@ -80,6 +80,7 @@ class TestCase extends \PHPUnit_Framework_TestCase
             'modules'=>[
                 'lookup'=>[
                     'class'=>'zacksleo\yii2\lookup\Module',
+                    'layout'=>'@tests/layouts/main'
                 ]
             ]
         ], $config));
