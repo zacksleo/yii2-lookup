@@ -31,6 +31,7 @@ class DefaultController extends Controller
     {
         $lookupModel = new LookupSearch();
         $dataProvider = $lookupModel->search(Yii::$app->request->queryParams);
+
         return $this->render('index', [
             'lookupModel' => $lookupModel,
             'dataProvider' => $dataProvider,
