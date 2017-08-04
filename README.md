@@ -8,6 +8,7 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/monster-hunter/yii2-lookup/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/monster-hunter/yii2-lookup/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/monster-hunter/yii2-lookup/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/monster-hunter/yii2-lookup/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/monster-hunter/yii2-lookup/badges/build.png?b=master)](https://scrutinizer-ci.com/g/monster-hunter/yii2-lookup/build-status/master)
+[![StyleCI](https://styleci.io/repos/98613980/shield?branch=master)](https://styleci.io/repos/98613980)
 ## Migrate database
 
 
