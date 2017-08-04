@@ -13,14 +13,10 @@ cache:
     - $HOME/.composer/cache
     - vendor
 
-install:
-  - travis_retry composer self-update
-  - travis_retry composer global require "fxp/composer-asset-plugin:^1.2.0"
-  - travis_retry composer install --prefer-dist --no-interaction
-
 before_script:
-  - travis_retry composer self-update
-  - travis_retry composer install --no-interaction --prefer-source --dev
+  - composer self-update
+  - composer global require "fxp/composer-asset-plugin:^1.2.0"
+  - composer install --no-interaction --prefer-source --dev
 
 script:
   - ./vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
