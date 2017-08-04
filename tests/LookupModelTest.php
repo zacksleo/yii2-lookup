@@ -69,4 +69,9 @@ class LookupModelTest extends TestCase
         $find = Lookup::findOne(['id'=>1]);
         $this->assertTrue($find->name == $model->name, 'update error');
     }
+
+    public function testXXX()
+    {
+
+    }
 }
