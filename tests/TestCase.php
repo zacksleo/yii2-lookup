@@ -14,8 +14,8 @@ class TestCase extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->mockApplication();
-        $this->setupTestDbData();
+        $this->mockWebApplication();
+        $this->createTestDbData();
     }
 
     protected function tearDown()
@@ -48,12 +48,39 @@ class TestCase extends \PHPUnit_Framework_TestCase
                             'class' => 'yii\i18n\PhpMessageSource',
                         ]
                     ]
-                ]
+                ],
             ],
             'modules'=>[
                 'lookup'=>[
                     'class'=>'zacksleo\yii2\lookup\Module',
                     'layout'=>'@tests/layouts/main'
+                ]
+            ]
+        ], $config));
+    }
+
+    protected function mockWebApplication($config = [], $appClass = '\yii\web\Application')
+    {
+        new $appClass(ArrayHelper::merge([
+            'id' => 'testapp',
+            'basePath' => __DIR__,
+            'vendorPath' => $this->getVendorPath(),
+            'components' => [
+                'db' => [
+                    'class' => 'yii\db\Connection',
+                    'dsn' => 'sqlite::memory:'
+                ],
+                'i18n' => [
+                    'translations' => [
+                        '*' => [
+                            'class' => 'yii\i18n\PhpMessageSource',
+                        ]
+                    ]
+                ],
+            ],
+            'modules'=>[
+                'lookup'=>[
+                    'class'=>'zacksleo\yii2\lookup\Module',
                 ]
             ]
         ], $config));
@@ -72,26 +99,21 @@ class TestCase extends \PHPUnit_Framework_TestCase
      */
     protected function destroyApplication()
     {
-        Yii::$app = null;
+        if (\Yii::$app && \Yii::$app->has('session', true)) {
+            \Yii::$app->session->close();
+        }
+        \Yii::$app = null;
     }
 
-    /**
-     * @param array $config controller config
-     *
-     * @return Controller controller instance
-     */
-    protected function createController($config = [])
-    {
-        return new Controller('test', Yii::$app, $config);
+    protected  function destroyTestDbData(){
+
+
     }
 
-    /**
-     * Setup tables for test ActiveRecord
-     */
-    protected function setupTestDbData()
+    protected function createTestDbData()
     {
         $db = Yii::$app->getDb();
-        // Structure :
+
         $db->createCommand()->createTable('lookup', [
             'id' => 'pk',
             'type' => 'string not null',
@@ -103,7 +125,6 @@ class TestCase extends \PHPUnit_Framework_TestCase
             'created_at' => 'integer not null default 0',
             'updated_at' => 'integer default 0',
         ])->execute();
-
         $db->createCommand()->insert('lookup', [
             'type' => 'TestStatus',
             'name' => '成功',
@@ -113,7 +134,6 @@ class TestCase extends \PHPUnit_Framework_TestCase
             'created_at' => time(),
             'updated_at' => time(),
         ])->execute();
-
         $db->createCommand()->insert('lookup', [
             'type' => 'TestStatus',
             'name' => '失败',
@@ -123,7 +143,6 @@ class TestCase extends \PHPUnit_Framework_TestCase
             'created_at' => time(),
             'updated_at' => time(),
         ])->execute();
-
         $db->createCommand()->createTable('post', [
             'id' => 'pk',
             'title' => 'string not null',
@@ -131,19 +150,14 @@ class TestCase extends \PHPUnit_Framework_TestCase
             'created_at' => 'integer not null default 0',
             'updated_at' => 'integer default 0',
         ])->execute();
-
         $db->createCommand()->insert('post', [
             'title' => 'title',
             'description' => 'description',
             'created_at' => time(),
             'updated_at' => time(),
         ])->execute();
+
     }
 
-    protected function destroyTestDbData()
-    {
-        $db = Yii::$app->getDb();
-        $db->createCommand()->dropTable("lookup")->execute();
-        $db->createCommand()->dropTable('post')->execute();
-    }
+
 }

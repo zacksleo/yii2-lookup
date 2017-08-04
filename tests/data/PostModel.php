@@ -11,6 +11,7 @@ use yii\db\ActiveRecord;
  */
 class PostModel extends ActiveRecord
 {
+    public $type;
     /**
      * @return string
      */

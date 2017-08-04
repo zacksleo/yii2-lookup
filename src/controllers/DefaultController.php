@@ -3,6 +3,7 @@
 namespace zacksleo\yii2\lookup\controllers;
 
 use Yii;
+use yii\db\Exception;
 use zacksleo\yii2\lookup\models\Lookup;
 use zacksleo\yii2\lookup\models\LookupSearch;
 use yii\web\Controller;
@@ -28,10 +29,9 @@ class DefaultController extends Controller
      * @return string
      */
     public function actionIndex()
-    {
+    {var_dump( Yii::$app->request->url);exit;
         $lookupModel = new LookupSearch();
         $dataProvider = $lookupModel->search(Yii::$app->request->queryParams);
-
         return $this->render('index', [
             'lookupModel' => $lookupModel,
             'dataProvider' => $dataProvider,
@@ -58,7 +58,6 @@ class DefaultController extends Controller
     public function actionCreate()
     {
         $model = new Lookup();
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
@@ -77,7 +76,6 @@ class DefaultController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
