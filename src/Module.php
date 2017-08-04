@@ -14,7 +14,7 @@ class Module extends \yii\base\Module
     /**
      * @var string source language for translation
      */
-    public $sourceLanguage = 'zh-CN';
+    public $sourceLanguage = 'en-US';
 
     /**
      * {@inheritdoc}
