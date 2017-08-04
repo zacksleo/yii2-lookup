@@ -14,9 +14,7 @@
     </testsuites>
     <filter>
         <whitelist>
-            <directory suffix=".php">./src/models</directory>
-            <file>./src/Module.php</file>
-            <directory suffix=".php">./src/messages</directory>
+            <directory suffix=".php">./src</directory>
         </whitelist>
     </filter>
 </phpunit>
