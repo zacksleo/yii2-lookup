@@ -13,12 +13,13 @@
         </testsuite>
     </testsuites>
     <filter>
-
+        <blacklist>
+            <directory suffix=".php">./vendor</directory>
+            <directory suffix=".php">./src/migrations</directory>
+            <directory suffix=".php">./src/views</directory>
+        </blacklist>
         <whitelist>
-            <directory suffix=".php">./src/controllers</directory>
-            <directory suffix=".php">./src/messages</directory>
-            <directory suffix=".php">./src/models</directory>
-            <directory suffix=".php">./src/Module</directory>
+            <directory suffix=".php">./src</directory>
         </whitelist>
     </filter>
 </phpunit>
