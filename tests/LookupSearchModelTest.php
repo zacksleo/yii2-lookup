@@ -8,7 +8,9 @@
 
 namespace zacksleo\yii2\lookup\tests;
 
+use zacksleo\yii2\lookup\models\Lookup;
 use zacksleo\yii2\lookup\models\LookupSearch;
+use zacksleo\yii2\lookup\Module;
 
 class LookupSearchModelTest extends TestCase
 {
