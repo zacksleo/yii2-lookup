@@ -3,7 +3,6 @@
 namespace zacksleo\yii2\lookup\controllers;
 
 use Yii;
-use yii\db\Exception;
 use zacksleo\yii2\lookup\models\Lookup;
 use zacksleo\yii2\lookup\models\LookupSearch;
 use yii\web\Controller;
