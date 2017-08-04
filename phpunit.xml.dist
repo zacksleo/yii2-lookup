@@ -15,6 +15,7 @@
     <filter>
         <whitelist>
             <directory suffix=".php">./src/models</directory>
+            <directory suffix=".php">./src/messages</directory>
         </whitelist>
     </filter>
 </phpunit>
