@@ -1,0 +1,23 @@
+engines:
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+      - php
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+  phpmd:
+    enabled: true
+    config:
+    checks:
+      UnusedLocalVariable:
+        enabled: false
+ratings:
+  paths:
+  - "**.js"
+  - "**.php"
+exclude_paths:
+- tests/
