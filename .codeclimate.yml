@@ -11,9 +11,6 @@ engines:
     enabled: true
   phpmd:
     enabled: true
-    checks:
-      UnusedLocalVariable:
-        enabled: false
 ratings:
   paths:
   - "**.js"
