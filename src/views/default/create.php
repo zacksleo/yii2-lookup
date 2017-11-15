@@ -7,7 +7,7 @@ use zacksleo\yii2\lookup\Module;
 /* @var $model app\models\Lookup */
 
 $this->title = Module::t('core', 'Create Lookup');
-$this->params['breadcrumbs'][] = ['label' => 'Lookups', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Module::t('core', 'Lookups'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="lookup-create">
